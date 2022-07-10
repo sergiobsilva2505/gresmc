@@ -60,6 +60,27 @@ public class User implements Serializable {
         this.cpf = cpf;
     }
 
+    public User(NewUserDTO newUserDTO) {
+        this.company = newUserDTO.company();
+        this.registration = newUserDTO.registration();
+        this.name = newUserDTO.name();
+        this.cep = newUserDTO.cep();
+        this.address = newUserDTO.address();
+        this.complement = newUserDTO.complement();
+        this.district = newUserDTO.district();
+        this.city = newUserDTO.city();
+        this.uf = newUserDTO.uf();
+        this.phone = newUserDTO.phone();
+        this.mobile = newUserDTO.mobile();
+        this.workSector = newUserDTO.workSector();
+        this.workSectorPhone = newUserDTO.workSectorPhone();
+        this.comments = newUserDTO.comments();
+        this.active = newUserDTO.active();
+        this.maritalStatus = newUserDTO.maritalStatus();
+        this.rg = newUserDTO.rg();
+        this.cpf = newUserDTO.cpf();
+    }
+
     public Long getId() {
         return id;
     }

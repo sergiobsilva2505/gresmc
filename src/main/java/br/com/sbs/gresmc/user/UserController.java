@@ -4,8 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
-@RequestMapping("/novo-socio")
+@RequestMapping
 public class UserController {
 
     private final UserService userService;
@@ -14,7 +16,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping("/novo-socio")
     public String getNewUserForm(NewUserDTO newUserDTO, Model model) {
         model.addAttribute("newUserDTO",newUserDTO);
         model.addAttribute("companies", Company.values());
@@ -23,11 +25,17 @@ public class UserController {
         return "socio/cadUser";
     }
 
-    @PostMapping
+    @PostMapping("/novo-socio")
     public String createNewUser(NewUserDTO newUserDTO, Model model) {
         userService.save(newUserDTO);
         return "redirect:/novo-socio";
     }
 
+    @GetMapping("/lista-socio")
+    public String getAll(Model model){
+        List<UserViewDTO> userViewDTOS = userService.getAllUsersBasicData();
+        model.addAttribute("userViewDTOS", userViewDTOS);
+        return "socio/listUser";
+    }
 
 }

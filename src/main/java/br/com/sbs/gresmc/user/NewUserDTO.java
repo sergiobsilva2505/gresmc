@@ -20,8 +20,4 @@ public record NewUserDTO(
         String rg,
         String cpf) {
 
-    public User toEntity() {
-        return new User(company, registration, name, cep, address, complement, district, city, uf, phone, mobile, workSector, workSectorPhone, comments, active, maritalStatus, rg, cpf);
-    }
-
 }

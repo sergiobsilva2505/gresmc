@@ -2,6 +2,8 @@ package br.com.sbs.gresmc.user;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -12,6 +14,11 @@ public class UserService {
     }
 
     public User save(NewUserDTO newUserDTO) {
-        return userRepository.save(newUserDTO.toEntity());
+        return userRepository.save(new User(newUserDTO));
+    }
+
+    public List<UserViewDTO> getAllUsersBasicData(){
+        List<User> users = userRepository.findAll();
+        return users.stream().map(UserViewDTO::toView).toList();
     }
 }
