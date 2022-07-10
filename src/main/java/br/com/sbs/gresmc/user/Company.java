@@ -1,4 +1,4 @@
-package br.com.sbs.gresmc;
+package br.com.sbs.gresmc.user;
 
 public enum Company {
     PMC("PMC"),

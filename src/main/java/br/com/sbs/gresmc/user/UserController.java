@@ -1,7 +1,5 @@
 package br.com.sbs.gresmc.user;
 
-import br.com.sbs.gresmc.Company;
-import br.com.sbs.gresmc.MaritalStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

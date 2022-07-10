@@ -1,27 +1,32 @@
 package br.com.sbs.gresmc.user;
 
-import br.com.sbs.gresmc.Company;
-import br.com.sbs.gresmc.MaritalStatus;
-
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     @Enumerated(EnumType.STRING)
     private Company company;
     private String registration;
     private String name;
+    private String cep;
     private String address;
+    private String complement;
     private String district;
     private String city;
+    private String uf;
     private String phone;
     private String mobile;
     private String workSector;
     private String workSectorPhone;
+    private String comments;
+    private boolean active;
+
     @Enumerated(EnumType.STRING)
     private MaritalStatus maritalStatus;
     private String rg;
@@ -32,19 +37,24 @@ public class User {
 
     }
 
-    public User(Company company, String registration, String name, String address, String district, String city,
-                String phone, String mobile, String workSector, String workSectorPhone, MaritalStatus maritalStatus,
+    public User(Company company, String registration, String name, String cep, String address, String complement, String district, String city,
+                String uf, String phone, String mobile, String workSector, String workSectorPhone, String comments, boolean active, MaritalStatus maritalStatus,
                 String rg, String cpf) {
         this.company = company;
         this.registration = registration;
         this.name = name;
+        this.cep = cep;
+        this.complement = complement;
         this.address = address;
         this.district = district;
         this.city = city;
+        this.uf = uf;
         this.phone = phone;
         this.mobile = mobile;
         this.workSector = workSector;
         this.workSectorPhone = workSectorPhone;
+        this.comments = comments;
+        this.active = active;
         this.maritalStatus = maritalStatus;
         this.rg = rg;
         this.cpf = cpf;
@@ -66,8 +76,16 @@ public class User {
         return name;
     }
 
+    public String getCep() {
+        return cep;
+    }
+
     public String getAddress() {
         return address;
+    }
+
+    public String getComplement() {
+        return complement;
     }
 
     public String getDistrict() {
@@ -76,6 +94,10 @@ public class User {
 
     public String getCity() {
         return city;
+    }
+
+    public String getUf() {
+        return uf;
     }
 
     public String getPhone() {
@@ -92,6 +114,14 @@ public class User {
 
     public String getWorkSectorPhone() {
         return workSectorPhone;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public boolean isActive() {
+        return active;
     }
 
     public MaritalStatus getMaritalStatus() {
