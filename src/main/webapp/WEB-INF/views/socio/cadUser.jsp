@@ -29,11 +29,12 @@
     <div class="mb-5 p-1 bg-secondary text-white text-center rounded">
         <h2>Ficha Cadastral</h2>
     </div>
-    <form:form action="/novo-socio" modelAttribute="newUserDTO" cssClass="row g-3 mb-3" method="post">
+    <form:form action="/novo-socio${not empty userDTO.id() ? '/' : ''}${userDTO.id()}" modelAttribute="userDTO" cssClass="row g-3 mb-3" method="post">
+        <form:hidden path="id" />
         <div class="col-md-6">
             <form:label path="company" cssClass="form-label" >Empresa</form:label>
             <form:select path="company" cssClass="form-select" value="${company}">
-                <form:option value="" label="--Selecione--"/>
+                <form:option value=""  label="--Selecione--"/>
                 <c:forEach items="${companies}" var="company">
                     <form:option value="${company}" label="${company.getDisplayName()}"/>
                 </c:forEach>
@@ -41,24 +42,24 @@
         </div>
         <div class="col-md-6">
             <form:label path="registration" cssClass="form-label">Matricula</form:label>
-            <form:input path="registration" cssClass="form-control" value="" id="registration" />
+            <form:input path="registration" cssClass="form-control"  id="registration" />
         </div>
         <div class="col-md-12">
             <form:label path="name" cssClass="form-label">Nome</form:label>
-            <form:input path="name" cssClass="form-control" value="" id="name" />
+            <form:input path="name" cssClass="form-control"  id="name" />
         </div>
         <div class="col-md-4">
             <form:label path="rg" cssClass="form-label">RG</form:label>
-            <form:input path="rg" cssClass="form-control" value="" id="rg" />
+            <form:input path="rg" cssClass="form-control" id="rg" />
         </div>
         <div class="col-md-4">
             <form:label path="cpf" cssClass="form-label">CPF</form:label>
-            <form:input path="cpf" cssClass="form-control" value="" id="cpf" />
+            <form:input path="cpf" cssClass="form-control" id="cpf" />
         </div>
         <div class="col-md-4">
             <form:label path="maritalStatus" cssClass="form-label">Estado civil</form:label>
-            <form:select path="maritalStatus" cssClass="form-select" value="" id="maritalStatus">
-                <form:option value="" label="--Selecione--"/>
+            <form:select path="maritalStatus" cssClass="form-select"  id="maritalStatus">
+                <form:option value=""  label="--Selecione--"/>
                 <c:forEach items="${maritalStatuses}" var="maritalStatus" >
                     <form:option value="${maritalStatus}" label="${maritalStatus.getDisplayName()}"/>
                 </c:forEach>
@@ -70,19 +71,19 @@
         </div>
         <div class="col-md-5">
             <form:label path="address" cssClass="form-label">Endereço</form:label>
-            <form:input path="address" cssClass="form-control" value="" id="address" />
+            <form:input path="address" cssClass="form-control"  id="address" />
         </div>
         <div class="col-md-5">
             <form:label path="complement" for="complement" cssClass="form-label">Complemento</form:label>
-            <form:input path="complement" type="text" name="complement" cssClass="form-control" value="" id="complement" />
+            <form:input path="complement" type="text" name="complement" cssClass="form-control"  id="complement" />
         </div>
         <div class="col-md-5">
             <form:label path="district" cssClass="form-label">Bairro</form:label>
-            <form:input path="district" cssClass="form-control" value="" id="district" />
+            <form:input path="district" cssClass="form-control"  id="district" />
         </div>
         <div class="col-md-5">
             <form:label path="city" cssClass="form-label">Cidade</form:label>
-            <form:input path="city" cssClass="form-control" value="" id="city" />
+            <form:input path="city" cssClass="form-control"  id="city" />
         </div>
         <div class="col-md-2">
             <form:label path="uf" cssClass="form-label" for="uf">UF</form:label>
@@ -90,19 +91,19 @@
         </div>
         <div class="col-md-6">
             <form:label path="phone" cssClass="form-label">Tel residencial</form:label>
-            <form:input path="phone" cssClass="form-control" value="" id="phone"/>
+            <form:input path="phone" cssClass="form-control"  id="phone"/>
         </div>
         <div class="col-md-6">
             <form:label path="mobile" cssClass="form-label">Celular</form:label>
-            <form:input path="mobile" cssClass="form-control" value="" id="mobile"/>
+            <form:input path="mobile" cssClass="form-control"  id="mobile"/>
         </div>
         <div class="col-md-6">
             <form:label path="workSector" cssClass="form-label">Setor</form:label>
-            <form:input path="workSector" cssClass="form-control" value="" id="workSector"/>
+            <form:input path="workSector" cssClass="form-control"  id="workSector"/>
         </div>
         <div class="col-md-6">
             <form:label path="workSectorPhone" cssClass="form-label">Tel setor</form:label>
-            <form:input path="workSectorPhone" cssClass="form-control" value="" id="workSectorPhone"/>
+            <form:input path="workSectorPhone" cssClass="form-control"  id="workSectorPhone"/>
         </div>
 <%--        <div class="col-md-12">--%>
 <%--            <div class="p-1 bg-secondary text-white text-center rounded">--%>
@@ -111,15 +112,15 @@
 <%--        </div>--%>
 <%--        <div class="col-md-4">--%>
 <%--            <label for="dependentName" class="form-label">Nome</label>--%>
-<%--            <input type="text" class="form-control" value="" id="dependentName"/>--%>
+<%--            <input type="text" class="form-control"  id="dependentName"/>--%>
 <%--        </div>--%>
 <%--        <div class="col-md-4">--%>
 <%--            <label for="relationship" class="form-label">Parentesco</label>--%>
-<%--            <input type="text" class="form-control" value="" id="relationship"/>--%>
+<%--            <input type="text" class="form-control"  id="relationship"/>--%>
 <%--        </div>--%>
 <%--        <div class="col-md-3">--%>
 <%--            <label for="dependentBirthDate" class="form-label">Data de Nascimento</label>--%>
-<%--            <input type="date" class="form-control" value="" id="dependentBirthDate"/>--%>
+<%--            <input type="date" class="form-control"  id="dependentBirthDate"/>--%>
 <%--        </div>--%>
 <%--        <div class="col-md-1">--%>
 <%--            <label class="form-label">Adicionar</label>--%>

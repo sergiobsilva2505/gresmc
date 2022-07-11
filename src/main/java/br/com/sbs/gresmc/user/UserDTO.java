@@ -1,6 +1,7 @@
 package br.com.sbs.gresmc.user;
 
-public record NewUserDTO(
+public record UserDTO(
+        Long id,
         Company company,
         String registration,
         String name,

@@ -60,29 +60,33 @@ public class User implements Serializable {
         this.cpf = cpf;
     }
 
-    public User(NewUserDTO newUserDTO) {
-        this.company = newUserDTO.company();
-        this.registration = newUserDTO.registration();
-        this.name = newUserDTO.name();
-        this.cep = newUserDTO.cep();
-        this.address = newUserDTO.address();
-        this.complement = newUserDTO.complement();
-        this.district = newUserDTO.district();
-        this.city = newUserDTO.city();
-        this.uf = newUserDTO.uf();
-        this.phone = newUserDTO.phone();
-        this.mobile = newUserDTO.mobile();
-        this.workSector = newUserDTO.workSector();
-        this.workSectorPhone = newUserDTO.workSectorPhone();
-        this.comments = newUserDTO.comments();
-        this.active = newUserDTO.active();
-        this.maritalStatus = newUserDTO.maritalStatus();
-        this.rg = newUserDTO.rg();
-        this.cpf = newUserDTO.cpf();
+    public User(UserDTO userDTO) {
+        this.company = userDTO.company();
+        this.registration = userDTO.registration();
+        this.name = userDTO.name();
+        this.cep = userDTO.cep();
+        this.address = userDTO.address();
+        this.complement = userDTO.complement();
+        this.district = userDTO.district();
+        this.city = userDTO.city();
+        this.uf = userDTO.uf();
+        this.phone = userDTO.phone();
+        this.mobile = userDTO.mobile();
+        this.workSector = userDTO.workSector();
+        this.workSectorPhone = userDTO.workSectorPhone();
+        this.comments = userDTO.comments();
+        this.active = userDTO.active();
+        this.maritalStatus = userDTO.maritalStatus();
+        this.rg = userDTO.rg();
+        this.cpf = userDTO.cpf();
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Company getCompany() {

@@ -15,13 +15,11 @@
 </head>
 <body>
 <header>
-    <nav class="navbar mb-3" style="background-color: #e3f2fd;">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="../../../img/ClubSocial_logo-baixa2.png" alt="30" width="24" height="24" class="d-inline-block align-text-top">
-                GRESMC
-            </a>
-        </div>
+    <nav class="navbar mb-3 px-5" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="/lista-socio">
+            <img src="../../../img/ClubSocial_logo-baixa2.png" alt="30" width="24" height="24" class="d-inline-block align-text-top">
+            GRESMC
+        </a>
     </nav>
 </header>
 <div class="container">
@@ -32,6 +30,7 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Telefone</th>
                 <th scope="col">Setor</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -42,6 +41,11 @@
                     <td>${userViewDTO.name()}</td>
                     <td>${userViewDTO.mobile()}</td>
                     <td>${userViewDTO.workSector()}</td>
+                    <td>
+                        <form action="/novo-socio/${userViewDTO.id()}">
+                            <input class="btn btn-secondary btn-sm" type="submit" value="Editar">
+                        </form>
+                    </td>
                 </tr>
             </c:forEach>
         </tbody>
