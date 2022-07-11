@@ -17,8 +17,7 @@
 <header>
     <nav class="navbar mb-3 px-5" style="background-color: #e3f2fd;">
         <a class="navbar-brand" href="/lista-socio">
-            <img src="../../../img/ClubSocial_logo-baixa2.png" alt="30" width="24" height="24" class="d-inline-block align-text-top">
-            GRESMC
+            <img src="../../../img/ClubSocial_logo-baixa2.png" alt="40" width="32" height="32" class="d-inline-block align-text-top"> GRESMC
         </a>
     </nav>
 </header>
@@ -30,6 +29,7 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Telefone</th>
                 <th scope="col">Setor</th>
+                <th scope="col">Status</th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -41,6 +41,7 @@
                     <td>${userViewDTO.name()}</td>
                     <td>${userViewDTO.mobile()}</td>
                     <td>${userViewDTO.workSector()}</td>
+                    <td>${userViewDTO.active() ? 'ativo': 'inativo'}</td>
                     <td>
                         <form action="/novo-socio/${userViewDTO.id()}">
                             <input class="btn btn-secondary btn-sm" type="submit" value="Editar">

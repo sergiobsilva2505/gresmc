@@ -32,8 +32,9 @@ public class UserService {
     }
 
     @Transactional
-    public void updateUser(UserDTO userDTO) {
+    public void updateUser(Long userId, UserDTO userDTO) {
         User user = new User(userDTO);
+        user.setId(userId);
         userRepository.save(user);
     }
 

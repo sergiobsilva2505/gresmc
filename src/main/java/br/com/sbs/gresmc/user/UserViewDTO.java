@@ -5,9 +5,10 @@ public record UserViewDTO(
         String registration,
         String name,
         String mobile,
-        String workSector) {
+        String workSector,
+        boolean active) {
 
     public static UserViewDTO toView(User user) {
-        return new UserViewDTO(user.getId(), user.getRegistration(), user.getName(), user.getMobile(), user.getWorkSector());
+        return new UserViewDTO(user.getId(), user.getRegistration(), user.getName(), user.getMobile(), user.getWorkSector(), user.isActive());
     }
 }
