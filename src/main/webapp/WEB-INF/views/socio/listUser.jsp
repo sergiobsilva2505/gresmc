@@ -40,7 +40,7 @@
                     <th scope="row">${userViewDTO.registration()}</th>
                     <td>${userViewDTO.name()}</td>
                     <td>${userViewDTO.mobile()}</td>
-                    <td>${userViewDTO.workSector()}</td>
+                    <td> ${userViewDTO.company().getDisplayName()} - ${userViewDTO.workSector()}</td>
                     <td>${userViewDTO.active() ? 'ativo': 'inativo'}</td>
                     <td>
                         <form action="/novo-socio/${userViewDTO.id()}">

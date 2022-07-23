@@ -50,7 +50,6 @@ public class UserController {
     }
 
     /*todo
-    *  - ajustar a recuperação dos campos selects no form
     *  - ajustar o update
     *  - endereço embedable ?
     * */

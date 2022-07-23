@@ -73,7 +73,11 @@
             <form:label path="address" cssClass="form-label">Endereço</form:label>
             <form:input path="address" cssClass="form-control"  id="address" />
         </div>
-        <div class="col-md-5">
+        <div class="col-md-1">
+            <form:label path="number" cssClass="form-label">Num.</form:label>
+            <form:input path="number" cssClass="form-control"  id="number" />
+        </div>
+        <div class="col-md-4">
             <form:label path="complement" for="complement" cssClass="form-label">Complemento</form:label>
             <form:input path="complement" type="text" name="complement" cssClass="form-control"  id="complement" />
         </div>

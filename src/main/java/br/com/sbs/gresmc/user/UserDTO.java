@@ -7,6 +7,7 @@ public record UserDTO(
         String name,
         String cep,
         String address,
+        String number,
         String complement,
         String district,
         String city,

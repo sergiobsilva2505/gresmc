@@ -40,7 +40,7 @@ public class UserService {
 
     private UserDTO toDto(User user) {
         return new UserDTO(user.getId(), user.getCompany(), user.getRegistration(), user.getName(), user.getCep(),
-                user.getAddress(), user.getComplement(), user.getDistrict(), user.getCity(), user.getUf(), user.getPhone(),
+                user.getAddress(), user.getNumber(), user.getComplement(), user.getDistrict(), user.getCity(), user.getUf(), user.getPhone(),
                 user.getMobile(), user.getWorkSector(), user.getWorkSectorPhone(), user.getComments(), user.isActive(),
                 user.getMaritalStatus(), user.getRg(), user.getCpf());
     }

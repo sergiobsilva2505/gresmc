@@ -16,6 +16,7 @@ public class User implements Serializable {
     private String name;
     private String cep;
     private String address;
+    private String number;
     private String complement;
     private String district;
     private String city;
@@ -37,7 +38,7 @@ public class User implements Serializable {
 
     }
 
-    public User(Company company, String registration, String name, String cep, String address, String complement, String district, String city,
+    public User(Company company, String registration, String name, String cep, String address, String number, String complement, String district, String city,
                 String uf, String phone, String mobile, String workSector, String workSectorPhone, String comments, boolean active, MaritalStatus maritalStatus,
                 String rg, String cpf) {
         this.company = company;
@@ -46,6 +47,7 @@ public class User implements Serializable {
         this.cep = cep;
         this.complement = complement;
         this.address = address;
+        this.number = number;
         this.district = district;
         this.city = city;
         this.uf = uf;
@@ -66,6 +68,7 @@ public class User implements Serializable {
         this.name = userDTO.name();
         this.cep = userDTO.cep();
         this.address = userDTO.address();
+        this.number = userDTO.number();
         this.complement = userDTO.complement();
         this.district = userDTO.district();
         this.city = userDTO.city();
@@ -107,6 +110,10 @@ public class User implements Serializable {
 
     public String getAddress() {
         return address;
+    }
+
+    public String getNumber() {
+        return number;
     }
 
     public String getComplement() {
