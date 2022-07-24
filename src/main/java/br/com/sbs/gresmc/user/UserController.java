@@ -48,9 +48,4 @@ public class UserController {
         userService.updateUser(userId, userDTO);
         return "redirect:/lista-socio";
     }
-
-    /*todo
-    *  - ajustar o update
-    *  - endereço embedable ?
-    * */
 }
